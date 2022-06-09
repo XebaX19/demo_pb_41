@@ -5,6 +5,9 @@ const { apiSuccessResponse, apiFailedResponse } = require('../utils/api.utils');
 class PostControllers {
     constructor() {
         this.service = new PostServices();
+        this.getPostsController = this.getPostsController.bind(this); //Para bindear los métodos al momento de crear la instancia...en caso de que de error al querer acceder a la instancia (this = undefined)
+        this.getPostByIdController = this.getPostByIdController.bind(this) ;
+        this.createPostController = this.createPostController.bind(this); 
     };
 
     async getPostsController(req, res, next) {
