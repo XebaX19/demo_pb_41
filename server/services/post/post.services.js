@@ -38,7 +38,7 @@ class PostServices {
     };
 
     async createPostService(post) {
-        const newPost = PostServices.#validatePost(post);
+        const newPost = await PostServices.#validatePost(post);
 
         return await this.postDAO.createPost(newPost);
     };

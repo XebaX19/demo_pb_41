@@ -2,7 +2,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 
 dotenv.config({
-    path: path.resolve(process.cwd(), `${process.env.NODE_ENV.trim()}.env`)
+    path: path.resolve(process.cwd(), `${process.env.NODE_ENV?.trim()}.env`)
 });
 
 module.exports = {
